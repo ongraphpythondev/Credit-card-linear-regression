@@ -11,7 +11,8 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 data_excel = 'Data Set.xlsx'
 cred = pd.read_excel(data_excel,engine="openpyxl")
 
-cred.corr().to_csv('corrilation_mat.csv')
+# Creating corelation matrix and saving it in corelation_mat.csv
+cred.corr().to_csv('corilation_mat.csv')
 
 # Selecting features based on there corelation with target variables
 feat = [
