@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.feature_selection import f_regression
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
-data_excel = '/home/pranjal/Desktop/cred/Data Set.xlsx'
+data_excel = 'Data Set.xlsx'
 cred = pd.read_excel(data_excel,engine="openpyxl")
 
 cred.corr().to_csv('corrilation_mat.csv')
