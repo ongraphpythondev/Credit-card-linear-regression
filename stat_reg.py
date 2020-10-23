@@ -11,10 +11,10 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 data_excel = 'Data Set.xlsx'
 cred = pd.read_excel(data_excel,engine="openpyxl")
 
-# Creating corelation matrix and saving it in corelation_mat.csv
-cred.corr().to_csv('corilation_mat.csv')
+# Creating correlation matrix and saving it in corelation_mat.csv
+cred.corr().to_csv('correlation_mat.csv')
 
-# Selecting features based on there corelation with target variables
+# Selecting features based on their correlation with target variables
 feat = [
         'card',
         'card2',
@@ -36,15 +36,15 @@ feat = [
 
 cred = cred[feat]
 
-# deviding data into continous and catagorical to process seperatly 
+# deviding data into continuous and categorical to process separately
 cat_data = cred[['active','card2type','cardtype','default','inccat','card', 'card2']]
 cont_data = cred[cred.columns.difference(cat_data.columns.to_list()+['cardspent','card2spent'])]
  
-# outliar and missing value treatement 
+# outliers and missing value treatment
 cont_data = cont_data.apply(lambda x : x.clip(upper=x.quantile(0.99), lower=x.quantile(0.01)))
 cont_data = cont_data.apply(lambda x : x.fillna(x.mean()))
 
-# creating dummies of catagorical var
+# creating dummies of categorical var
 cat_data = pd.get_dummies(cat_data.astype('object'),drop_first=True)
 
 # creating new dataframe after processing data
