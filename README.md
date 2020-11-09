@@ -65,7 +65,7 @@ Secondary Credit Card) of the customer. Given the factors, predict credit limit 
 In statistics, linear regression is a linear approach to modeling the relationship between a scalar response or dependent variable and one or more explanatory variables or independent variables. In our case the  dependent variables are "cardspent" and "card2spent". The independent variables are to be selected according to their relation with the dependent variables and with each other (multicollinearity). 
 
 The feature selection is done with the help of correlation matrix, f_regression method to infer the relation of each feature with the dependent variables. 
-VIF (variance inflation factor) is used to infer the relation of the independent variable with each other.
+VIF (Variance Inflation Factor) is used to infer the relation of the independent variable with each other.
 
 After selecting the correct features, modeling is done .The model can be further improved by keeping the R squared high and the difference between R squared and the adjusted R squared as low as possible otherwise it will indicate multicollinearity in our model. 
 
