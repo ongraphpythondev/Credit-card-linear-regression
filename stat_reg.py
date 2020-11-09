@@ -106,11 +106,11 @@ print(lm.summary())
 # Adj. R-squared:      |            0.433
 #______________________|____________________
 
-# mean_squared_error (for train)
+# root mean_squared_error (for train)
 np.sqrt(mean_squared_error(np.exp(train['ln_cardspent']),np.exp(lm.predict(train)))) 
 # 211.8670606338464
 
-# mean_squared_error (for train)
+# root mean_squared_error (for train)
 np.sqrt(mean_squared_error(np.exp(test['ln_cardspent']),np.exp(lm.predict(test)))) 
 # 283.83144183796105
 
